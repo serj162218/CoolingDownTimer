@@ -28,7 +28,7 @@
       $("#rowCode").text(e.rawcode)
       let id = e.rawcode;
       let t;
-      if($(`.clockDiv[d-id=${id}]`).length != 0){
+      if ($(`.clockDiv[d-id=${id}]`).length != 0) {
         let clockElement = $(`.clockDiv[d-id=${id}]`);
         clockElement.children(".clockIntro").css("color", "black");
         clockElement.children(".clockTickingTime").css("display", "block");

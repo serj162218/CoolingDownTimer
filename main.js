@@ -7,12 +7,16 @@ function createWindow() {
     height: 370,
     autoHideMenuBar: true,
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: true,
       contextIsolation: false,
     }
   })
   mainWindow.setAlwaysOnTop(true, 'screen');
 
+  global.sharedObject = {
+    locate: process.env.PORTABLE_EXECUTABLE_DIR
+  }
   // 載入 index.html，亦可載入某個網址
   mainWindow.loadFile('index.html')
   // 打開開發者模式

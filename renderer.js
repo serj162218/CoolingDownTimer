@@ -1,9 +1,10 @@
-let fs = nodeRequire('fs'); //Load the File System to execute our common tasks (CRUD)
+let fs = nodeRequire("fs");
+const remote = nodeRequire('electron').remote
+const data = remote.getGlobal('sharedObject');
 
-fs.readFile("config.json", (error, data) => {
-    console.log(JSON.parse(data.toString()));
+fs.readFile(`${data.locate??"."}/config.json`, (error, data) => {
     let arr = JSON.parse(data.toString());
-    if(arr['rawcode']){
+    if (arr['rawcode']) {
         $("#clickRowCode").css("display", "block");
     }
     arr['clock'].forEach((e) => {
