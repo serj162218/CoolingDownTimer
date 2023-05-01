@@ -1,4 +1,4 @@
-# myClock
+# CoolingDownTimer
 ## Intro
 Using to record the cooling time in Game.
 If it's not working, please open the .exe as admin.
