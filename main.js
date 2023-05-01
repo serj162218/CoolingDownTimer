@@ -1,15 +1,11 @@
-// main.js
-
 const { app, BrowserWindow } = require('electron')
-const path = require('path')
-
 // 建立應用程式視窗的 function
 function createWindow() {
   // 應用程式視窗設定
   const mainWindow = new BrowserWindow({
     width: 380,
     height: 370,
-    autoHideMenuBar:true,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

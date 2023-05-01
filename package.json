@@ -1,20 +1,17 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "coolingdowntimer",
+  "version": "2.0.0",
+  "description": "Record cool down in game.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/serj162218/CoolingDownTimer",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Timer"
   ],
-  "author": "GitHub",
+  "author": "serj162218",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "12.2.3",

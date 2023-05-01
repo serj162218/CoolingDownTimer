@@ -3,12 +3,12 @@ const builder = require('electron-builder');
 
 builder.build({
 
-    projectDir: path.resolve(__dirname),  // 專案路徑 
+    projectDir: path.resolve(__dirname),
 
-    win: ['nsis', 'portable'],  // nsis . portable
+    win: ['nsis', 'portable'],
     config: {
-        "appId": "com.andrewdeveloper.electron.myClock",
-        "productName": "myClock", // 應用程式名稱 ( 顯示在應用程式與功能 )
+        "appId": "com.serj162218.electron.CoolingDownTimer",
+        "productName": "CoolingDownTimer",
         "directories": {
             "output": "build/win"
         },
