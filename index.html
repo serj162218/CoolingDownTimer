@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy"
+    content="default-src *'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" 
+    content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'"> -->
+  <link href="./styles.css" rel="stylesheet">
+  <title>MeowMeow</title>
+
+  <script>
+    if (typeof require !== "undefined") {
+      window.nodeRequire = require;
+      delete window.require;
+      delete window.exports;
+      delete window.module;
+    }
+  </script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script>
+    const ioHook = nodeRequire('iohook');
+    let recordTimeObj = {};
+    ioHook.on('keydown', function (e) {
+      // console.log(e);
+      // console.log(e.rawcode);
+      let id;
+      let t
+      if (e.rawcode >= 97 && e.rawcode <= 100) {
+        id = e.rawcode - 96;
+        let clockElement = $(`.clockDiv[d-id=${id}]`);
+        clockElement.children(".clockIntro").css("color", "black");
+        clockElement.children(".clockTickingTime").css("display", "block");
+        t = parseInt(clockElement.attr("d-time"));
+        clockElement.children(".clockTickingTime").text(t);
+        clearInterval(recordTimeObj[id]);
+        recordTimeObj[id] = setInterval(function () {
+          console.log(`id:${id}, t:${t}`);
+          t -= 1;
+          if (t <= 0) {
+            clearInterval(this);
+            clockElement.children(".clockTickingTime").css("display", "none");
+            clockElement.children(".clockIntro").css("color", "red");
+          }
+          else {
+            clockElement.children(".clockTickingTime").text(t);
+          }
+        }, 1000)
+      }
+    });
+    ioHook.start();
+    ioHook.start(false);
+  </script>
+</head>
+
+<body>
+  <div class="clockDiv" d-time="60" d-id="1" d-intro="115/影子">
+    <span class="clockIntro"></span>
+    <br>
+    <span class="clockTickingTime"></span>
+  </div>
+  <div class="clockDiv" d-time="25" d-id="2" d-intro="百鬼">
+    <span class="clockIntro"></span>
+    <br>
+    <span class="clockTickingTime"></span>
+  </div>
+  <!-- <div class="clockDiv" d-time="60" d-id="3" d-intro="ABC">
+    <span class="clockIntro"></span>
+    <br>
+    <span class="clockTickingTime"></span>
+  </div>
+  <div class="clockDiv" d-time="60" d-id="4" d-intro="沒想到">
+    <span class="clockIntro"></span>
+    <br>
+    <span class="clockTickingTime"></span>
+  </div> -->
+</body>
+<script>
+  $("body").ready(() => {
+    let e = $(".clockDiv");
+    e.each(function (index) {
+      $(this).children(".clockIntro").text($(this).attr("d-intro"));
+    });
+  })
+</script>
+
+</html>
