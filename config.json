@@ -1,0 +1,21 @@
+{
+    "rawcode": false,
+    "clock": [
+        {
+            "type": 1,
+            "time": "60",
+            "intro": "timer",
+            "click": 97
+        },
+        {
+            "type": 2,
+            "intro": "stopwatch",
+            "click": 98
+        },
+        {
+            "type": 3,
+            "intro": "Counter",
+            "click": 99
+        }
+    ]
+}
