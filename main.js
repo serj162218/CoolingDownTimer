@@ -3,8 +3,8 @@ const { app, BrowserWindow } = require('electron')
 function createWindow() {
   // 應用程式視窗設定
   const mainWindow = new BrowserWindow({
-    width: 380,
-    height: 370,
+    width: 700,
+    height: 350,
     autoHideMenuBar: true,
     webPreferences: {
       enableRemoteModule: true,

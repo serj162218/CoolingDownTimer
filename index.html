@@ -19,44 +19,13 @@
       delete window.module;
     }
   </script>
-  <script type="text/javascript" src="jquery.js"></script>
-  <script type="text/javascript" src="renderer.js"></script>
-  <script>
-    const ioHook = nodeRequire('iohook');
-    let recordTimeObj = {};
-    ioHook.on('keydown', function (e) {
-      $("#rowCode").text(e.rawcode)
-      let id = e.rawcode;
-      let t;
-      if ($(`.clockDiv[d-id=${id}]`).length != 0) {
-        let clockElement = $(`.clockDiv[d-id=${id}]`);
-        clockElement.children(".clockIntro").css("color", "black");
-        clockElement.children(".clockTickingTime").css("display", "block");
-        t = parseInt(clockElement.attr("d-time"));
-        clockElement.children(".clockTickingTime").text(t);
-        clearInterval(recordTimeObj[id]);
-        recordTimeObj[id] = setInterval(function () {
-          console.log(`id:${id}, t:${t}`);
-          t -= 1;
-          if (t <= 0) {
-            clearInterval(this);
-            clockElement.children(".clockTickingTime").css("display", "none");
-            clockElement.children(".clockIntro").css("color", "red");
-          }
-          else {
-            clockElement.children(".clockTickingTime").text(t);
-          }
-        }, 1000)
-      }
-    });
-    ioHook.start();
-    ioHook.start(false);
-  </script>
 </head>
 
 <body>
   <span id="clickRowCode">click number:<span id="rowCode">0</span></span>
-  <div id="clock"></div>
+  <div id="main"></div>
 </body>
 
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="renderer.js"></script>
 </html>

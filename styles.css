@@ -1,20 +1,24 @@
-#clock {
+#main {
     background-color: white;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-#clickRowCode{
+
+#clickRowCode {
     display: none;
 }
-.clockDiv {
+
+.clock {
     margin-bottom: 10%;
-    margin-right:10%;
+    margin-right: 10%;
     font-size: 45px;
 }
-.clockIntro{
+
+.intro {
     color: red;
 }
-.clockTickingText{
+
+.number {
     display: none;
 }
