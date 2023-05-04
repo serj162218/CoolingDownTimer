@@ -7,8 +7,8 @@ builder.build({
 
     win: ['nsis', 'portable'],
     config: {
-        "appId": "com.serj162218.electron.CoolingDownTimer",
-        "productName": "CoolingDownTimer",
+        "appId": "com.serj162218.electron.MeowCounterTool",
+        "productName": "MeowCounterTool",
         "directories": {
             "output": "build/win"
         },

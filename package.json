@@ -1,12 +1,12 @@
 {
-  "name": "coolingdowntimer",
-  "version": "2.0.0",
-  "description": "Record cool down in game.",
+  "name": "meow_counter_tool",
+  "version": "3.0.0",
+  "description": "Several tools to use in game and others.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/serj162218/CoolingDownTimer",
+  "repository": "https://github.com/serj162218/meowCounterTool",
   "keywords": [
     "Electron",
     "Timer"
